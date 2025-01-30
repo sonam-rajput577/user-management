@@ -1,48 +1,80 @@
-/* Make the Add User button stack vertically on mobile */
-.user-actions {
-    display: flex;
-    margin-bottom: 16px;
+mat-card {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px;
 }
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+th.mat-header-cell {
+    font-size: 15px !important;
+}
+
+
+.table-container {
+    max-height: 400px;
+    overflow: auto;
+    display: block;
+}
+
+
+.table-container thead {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+}
+
+/* Ensure table is 100% width */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media (max-width: 532px) {
+    ::ng-deep .mat-select-value {
+        max-width: 100px !important;
+    }
+}
+
 
 @media (max-width: 600px) {
-   
-    .mat-raised-button {
-        width: 100%; /* Make button full width on mobile */
+
+    .table-container {
+        max-height: 300px;
+
     }
 
-    table {
-        width: 100%;
+
+    .table-container {
+        overflow-x: auto;
     }
 
-    /* Stack table content on smaller screens */
-    th, td {
-        padding: 8px;
-    }
 
-    /* Reduce column space on small screens */
-    .mat-header-cell, .mat-cell {
+    th,
+    td {
         font-size: 12px;
+        padding: 6px;
     }
 }
 
-/* For tablet-sized screens and above */
-@media (min-width: 600px) and (max-width: 1024px) {
-   
 
+@media (min-width: 600px) and (max-width: 1024px) {
     .mat-raised-button {
         width: auto;
     }
 
-    table {
-        width: 100%;
+    .table-container {
+        max-height: 350px;
     }
 }
 
-/* For larger screens (desktops) */
-@media (min-width: 1024px) {
-  
 
-    table {
-        width: 100%;
+@media (min-width: 1024px) {
+    .table-container {
+        max-height: 400px;
     }
 }

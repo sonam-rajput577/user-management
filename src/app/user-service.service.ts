@@ -29,13 +29,13 @@ export class UserServiceService {
     }
   }
 
-  /** Get all users from localStorage */
+  
   getUsers(): Users[] {
     const users = localStorage.getItem(this.storageKey);
     return users ? JSON.parse(users) : [];
   }
 
-  /** Add a new user */
+ 
   addUser(user: Users): void {
     const users = this.getUsers();
     user.id = users.length ? Math.max(...users.map(u => u.id)) + 1 : 1; 
@@ -43,7 +43,7 @@ export class UserServiceService {
     this.saveUsers(users);
   }
 
-  /** Update an existing user */
+ 
   updateUser(updatedUser: Users): void {
     let users = this.getUsers();
     users = users.map(user => user.id === updatedUser.id ? updatedUser : user);
