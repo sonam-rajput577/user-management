@@ -1,0 +1,48 @@
+/* Make the Add User button stack vertically on mobile */
+.user-actions {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+   
+    .mat-raised-button {
+        width: 100%; /* Make button full width on mobile */
+    }
+
+    table {
+        width: 100%;
+    }
+
+    /* Stack table content on smaller screens */
+    th, td {
+        padding: 8px;
+    }
+
+    /* Reduce column space on small screens */
+    .mat-header-cell, .mat-cell {
+        font-size: 12px;
+    }
+}
+
+/* For tablet-sized screens and above */
+@media (min-width: 600px) and (max-width: 1024px) {
+   
+
+    .mat-raised-button {
+        width: auto;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+/* For larger screens (desktops) */
+@media (min-width: 1024px) {
+  
+
+    table {
+        width: 100%;
+    }
+}
